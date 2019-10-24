@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo
+echo "Downloading piku-bootstrap here and running it."
+echo
+curl -s https://raw.githubusercontent.com/piku/piku/master/piku-bootstrap > piku-bootstrap && chmod 755 piku-bootstrap && ./piku-bootstrap
