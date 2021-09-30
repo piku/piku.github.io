@@ -94,8 +94,12 @@ This tells `piku` that our application has a standalone web server that is _not_
 
 ## Binding to Localhost
 
-## Using Port 80 
+## Using Port 80
+
+## Multiple Hostnames
 
 ## Using `uwsgi`
+
+## Lazy Mode
 
 ## Configuring TLS
