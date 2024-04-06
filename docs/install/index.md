@@ -12,13 +12,15 @@ curl https://piku.github.io/get | sh
 
 `piku` requires `Python 3`, [uWSGI][uwsgi], `ssh`, and a Linux distribution that runs `systemd`, such as Raspbian Jessie/Debian 8+/Ubuntu/Fedora/CentOS.
 
-There are 3 ways to install `piku` on a server:
+There are 3 main ways to install `piku` on a server:
 
 1. Use [piku-bootstrap](https://github.com/piku/piku-bootstrap) to do it if your server is already provisioned (that is what the TL;DR command does)
 
 2. Use `cloud-init` to do it automatically at VPS build time (see the [`cloud-init`](https://github.com/piku/cloud-init) repository, which has examples for most common cloud providers)
 
 3. Manually: Follow the guide below or one of the platform-specfic guides. 
+
+There is also an [Ansible playbook](https://github.com/piku/ansible-setup).
 
 !!! Contributing
     If you are running `piku` on specific Linux versions, feel free to contribute your own instructions.
