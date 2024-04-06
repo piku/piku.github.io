@@ -36,50 +36,6 @@ It is currently being refactored to require Python 3.7 or above, since even thou
 Since most of its users run it on LTS distributions, there is no rush to introduce disruption. The current plan is to throw up a warning for older runtimes and do regression testing for 3.7, 3.8, 3.9 and 3.10 (replacing the current bracket of tests from 3.5 to 3.8), and make sure we also cover Ubuntu 22.04, Debian 11 and Fedora 37+.
 
 
-### Core values
-
- * Must run on low end devices.
- * Accessible to hobbyists and K-12 schools.
- * ~1500 lines readable code.
- * Functional code style.
- * Few (single?) dependencies
- * [12 factor app](https://12factor.net).
- * Simplify user experience.
- * Cover 80% of common use cases.
- * Sensible defaults for all features.
- * Leverage distro packages in Raspbian/Debian/Ubuntu (Alpine and RHEL support is WIP)
- * Leverage standard tooling (`git`, `ssh`, `uwsgi`, `nginx`).
- * Preserve backwards compatibility where possible
-
-
-### Virtual Hosts and SSL
-
-`piku` has full virtual host support - i.e., you can host multiple apps on the same VPS and use DNS aliases to access them via different hostnames. 
-
-`piku`  will also set up either a private certificate or obtain one via [Let's Encrypt](https://letsencrypt.org/) to enable SSL.
-
-If you are on a LAN and are accessing `piku` from macOS/iOS/Linux clients, you can try using [`piku/avahi-aliases`](https://github.com/piku/avahi-aliases) to announce different hosts for the same IP address via Avahi/mDNS/Bonjour.
-
-### Caching and Static Paths
-
-Besides static sites, `piku` also supports directly mapping specific URL prefixes to filesystem paths (to serve static assets) or caching back-end responses (to remove load from applications).
-
-These features are configured by setting appropriate values in the [`ENV`](ENV.md) file.
-
-### Supported Platforms
-
-`piku` is intended to work in any POSIX-like environment where you have Python, `nginx`, [`uWSGI`][uwsgi] and SSH: it has been deployed on Linux, FreeBSD, [Cygwin][cygwin] and the [Windows Subsystem for Linux][wsl].
-
-As a baseline, it began its development on an original 256MB Rasbperry Pi Model B, and still runs reliably on it.
-
-But its main use is as a micro-PaaS to run applications on cloud servers with both Intel and ARM CPUs, with Debian and Ubuntu Linux as target platforms.
-
-### Supported Runtimes
-
-`piku` currently supports apps written in Python, Node, Clojure, Java and a few other languages (like Go) in the works.
-
-But as a general rule, if it can be invoked from a shell, it can be run inside `piku`.
-
 ## Install
 
 `piku` can manage multiple apps on a single machine, and all you need is a VPS, Raspberry Pi, or other server.
