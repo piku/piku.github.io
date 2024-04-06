@@ -1,6 +1,22 @@
 # Configuring Piku via ENV
 
-You can configure deployment settings by placing special variables in an `ENV` file deployed with your app.
+You can configure deployment settings by placing special variables in an `ENV` file deployed with your app. This file should be placed in the root of your app's directory, and can look something like this:
+
+```bash
+# variables are global and can be replaced
+SETTING1=True
+SETTING2=${SETTING1}/Maybe
+
+# addr:port
+PORT=9080
+BIND_ADDRESS=0.0.0.0
+
+# the max number the worker will process
+RANGE=10
+
+# worker sleep interval between prints
+INTERVAL=1
+```
 
 ## Runtime Settings
 
@@ -9,6 +25,9 @@ You can configure deployment settings by placing special variables in an `ENV` f
 ### Python
 
 * `PYTHON_VERSION` (int): Forces Python 3
+
+!!! warning
+    This is mostly deprecated (since `piku` now runs solely on Python 3.x), but is kept around for legacy compatibility.
 
 ### Node
 
