@@ -1,7 +1,6 @@
 site_name: Piku
 theme:
   name: material
-  custom_dir: overrides
   palette:
     primary: red
   logo: img/piku.svg
