@@ -2,7 +2,7 @@
 
 ## TL;DR:
 
-To install it on your server, SSH in as root and run this:
+To install it on your server, `ssh` in as `root` and run this:
 
 ```bash
 curl https://piku.github.io/get | sh
