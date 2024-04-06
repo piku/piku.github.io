@@ -12,7 +12,7 @@
   `git remote add piku piku@yourserver:appname`.
 * Push your code: `git push piku master` (or if you want to push a different branch than the current one use `git push piku release-branch-name`).
 * `piku` determines the runtime and installs the dependencies for your app (building whatever's required).
-* It then looks at a [`Procfile`](DESIGN.md#procfile-format) which is [documented here](DESIGN.md#procfile-format) and starts matching worker processes.
+* It then looks at a [`Procfile`](configuration/procfile.md) and starts matching worker processes.
   * You can optionally also specify a `release` worker which is run once when the app is deployed.
 * You can then remotely change application settings (`config:set`) or scale up/down worker processes (`ps:scale`).
 * You can also bake application and `nginx` settings into an [`ENV` configuration file](configuration/index.md#configuring-piku-via-env). 
