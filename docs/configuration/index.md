@@ -14,7 +14,8 @@ You can configure deployment settings by placing special variables in an `ENV` f
 
 * `NODE_VERSION`: installs a particular version of node for your app if `nodeenv` is found on the path. Optional; if not specified, the system-wide node  package is used.
 
-> **NOTE**: you will need to stop and re-deploy the app to change the `node` version in a running app.
+!!! note
+    you will need to stop and re-deploy the app to change the `node` version in a running app.
 
 ## Network Settings
 
@@ -35,7 +36,8 @@ You can configure deployment settings by placing special variables in an `ENV` f
 * `UWSGI_INCLUDE_FILE`: a uwsgi config file in the app's dir to include - useful for including custom uwsgi directives.
 * `UWSGI_IDLE` (integer): set the `cheap`, `idle` and `die-on-idle` options to have workers spawned on demand and killed after _n_ seconds of inactivity. 
 
-> **NOTE:** `UWSGI_IDLE` applies to _all_ the workers, so if you have `UWSGI_PROCESSES` set to 4, they will all be killed simultaneously. Support for progressive scaling of workers via `cheaper` and similar uWSGI configurations will be added in the future. 
+!!! note
+    `UWSGI_IDLE` applies to _all_ the workers, so if you have `UWSGI_PROCESSES` set to 4, they will all be killed simultaneously. Support for progressive scaling of workers via `cheaper` and similar uWSGI configurations will be added in the future. 
 
 ## `nginx` Settings
 
@@ -44,7 +46,8 @@ You can configure deployment settings by placing special variables in an `ENV` f
 * `NGINX_CLOUDFLARE_ACL` (boolean, defaults to `false`): activate an ACL allowing access only from Cloudflare IPs
 * `NGINX_HTTPS_ONLY` (boolean, defaults to `false`): tell `nginx` to auto-redirect non-SSL traffic to SSL site. 
 
-> **NOTE:** if used with Cloudflare, `NGINX_HTTPS_ONLY` will cause an infinite redirect loop - keep it set to `false`, use `NGINX_CLOUDFLARE_ACL` instead and add a Cloudflare Page Rule to "Always Use HTTPS" for your server (use `domain.name/*` to match all URLs). 
+!!! note
+    if used with Cloudflare, `NGINX_HTTPS_ONLY` will cause an infinite redirect loop - keep it set to `false`, use `NGINX_CLOUDFLARE_ACL` instead and add a Cloudflare Page Rule to "Always Use HTTPS" for your server (use `domain.name/*` to match all URLs). 
 
 ### `nginx` Caching
 
@@ -61,7 +64,8 @@ The behavior of the cache can be controlled with the following variables:
 * `NGINX_CACHE_EXPIRY` (integer, defaults to 86400): set the amount of time (in seconds) that cache entries will be kept on disk.
 * `NGINX_CACHE_PATH` (string, detaults to `~piku/.piku/<appname>/cache`): location for the `nginx` cache data.
 
-> **NOTE:** `NGINX_CACHE_PATH` will be _completely managed by `nginx` and cannot be removed by Piku when the application is destroyed_. This is because `nginx` sets the ownership for the cache to be exclusive to itself, and the `piku` user cannot remove that file tree. So you will either need to clean it up manually after destroying the app or store it in a temporary filesystem (or set the `piku` user to the same UID as `www-data`, which is not recommended).
+!!! note
+    `NGINX_CACHE_PATH` will be _completely managed by `nginx` and cannot be removed by Piku when the application is destroyed_. This is because `nginx` sets the ownership for the cache to be exclusive to itself, and the `piku` user cannot remove that file tree. So you will either need to clean it up manually after destroying the app or store it in a temporary filesystem (or set the `piku` user to the same UID as `www-data`, which is not recommended).
 
 Right now, there is no provision for cache revalidation (i.e., `nginx` asking your backend if the cache entries are still valid), since that requires active application logic that varies depending on the runtime--`nginx` will only ask your backend for new content when `NGINX_CACHE_TIME` elapses. If you require that kind of behavior, that is still possible via `NGINX_INCLUDE_FILE`.
 

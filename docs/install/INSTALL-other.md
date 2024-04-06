@@ -109,11 +109,11 @@ sudo service uwsgi-piku start
 
 ## nginx Installation (Raspbian 8, Ubuntu 16.04)
 
-> **Warning**
-> 
-> These OS releases are no longer supported and these instructions are kept for reference purposes only.
+!!! warning
+    These OS releases are no longer supported and these instructions are kept for reference purposes only.
 
-*PLEASE NOTE:* There is a bug in `nginx` 1.6.2 under Raspbian 8 that causes it to try to allocate around a gigabyte of RAM when using SSL with SPDY. I seriously recommend using Ubuntu instead, if you can, or disabling SSL altogether.
+!!! warning
+    There is a bug in `nginx` 1.6.2 under Raspbian 8 that causes it to try to allocate around a gigabyte of RAM when using SSL with `SPDY`. I seriously recommend using Ubuntu instead, if you can, or disabling SSL altogether.
 
 ```bash
 sudo apt-get install nginx
