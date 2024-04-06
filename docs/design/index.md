@@ -1,4 +1,4 @@
-# Design Notes
+# Design
 
 The idea behind `piku` is that it provides the simplest possible way to deploy web apps or services. Simplicity comes at the expense of features, of course, and this document tries to capture the trade-offs.
 
