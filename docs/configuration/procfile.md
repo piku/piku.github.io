@@ -8,7 +8,11 @@
 * `static` workers, which simply mount the first argument as the root static path
 * `preflight` which is a special "worker" that is run once _before_ the app is deployed _and_ installing deps (can be useful for cleanups).
 * `release` which is a special worker that is run once when the app is deployed, after installing deps (can be useful for build steps).
-* `cron` workers, which require a simplified `cron` expression preceding the command to be run (e.g. `cron: */5 * * * * python batch.py` to run a batch every 5 minutes)
+* `cron` workers, which require a simplified `crontab` expression preceding the command to be run (e.g. `cron: */5 * * * * python batch.py` to run a batch every 5 minutes)
+
+!!! warning
+    `crontab` expressions are simplified and do not support ranges or lists, only single values, splits and `*` (wildcard).
+
 * `worker` processes, which are standalone workers and can have arbitrary names
 
 So a Python application could have a `Procfile` like such:
