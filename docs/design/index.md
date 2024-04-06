@@ -76,7 +76,7 @@ SETTING2=${SETTING1}/bar
 PORT=9080
 ```
 
-See [ENV.md](./ENV.md) for a full list of Piku variables which can also be set.
+See [configuration](configuration) for a full list of Piku variables which can also be set.
 
 Environment variables can be changed after deployment using `config:set`.
 

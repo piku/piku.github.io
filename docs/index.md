@@ -12,16 +12,10 @@
   `git remote add piku piku@yourserver:appname`.
 * Push your code: `git push piku master` (or if you want to push a different branch than the current one use `git push piku release-branch-name`).
 * `piku` determines the runtime and installs the dependencies for your app (building whatever's required).
-   * For Python, it segregates each app's dependencies into a `virtualenv`.
-   * For Go, it defines a separate `GOPATH` for each app.
-   * For Node, it installs whatever is in `package.json` into `node_modules`.
-   * For Java, it builds your app depending on either `pom.xml` or `build.gradle` file.
-   * For Clojure, it can use either `leiningen` or the Clojure CLI and a `deps.edn` file.
-   * For Ruby, it does `bundle install` of your gems in an isolated folder.
-* It then looks at a [`Procfile`](DESIGN.md#procfile-format) which is [documented here](DESIGN.md#procfile-format) and starts the relevant workers using [uWSGI][uwsgi] as a generic process manager.
-* You can optionally also specify a `release` worker which is run once when the app is deployed.
+* It then looks at a [`Procfile`](DESIGN.md#procfile-format) which is [documented here](DESIGN.md#procfile-format) and starts matching worker processes.
+  * You can optionally also specify a `release` worker which is run once when the app is deployed.
 * You can then remotely change application settings (`config:set`) or scale up/down worker processes (`ps:scale`).
-* You can also bake application and `nginx` settings into an [`ENV`](ENV.md) file which is [documented here](ENV.md).
+* You can also bake application and `nginx` settings into an [`ENV` configuration file](configuration/index.md#configuring-piku-via-env). 
 
 You can also deploy a `gh-pages` style static site using a `static` worker type, with the root path as the argument, and run a `release` task to do some processing on the server after `git push`.
 
