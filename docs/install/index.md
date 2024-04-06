@@ -1,28 +1,20 @@
 # Installation
 
-## TL;DR:
-
-To install it on your server, SSH in as root and run this:
-
-```bash
-curl https://piku.github.io/get | sh
-```
-
 ## Installation Methods
 
 `piku` requires `Python 3`, [uWSGI][uwsgi], SSH, and a Linux distribution that runs `systemd`, such as Raspbian Jessie/Debian 8+/Ubuntu/Fedora/CentOS.
 
 There are 3 ways to install `piku` on a server:
 
-1. Manually: Follow INSTALL-x.md for which ever platform. If you are running `piku` on specific Linux versions, feel free to contribute your own instructions.
+1. Use [piku-bootstrap](https://github.com/piku/piku-bootstrap) to do it if your server is already provisioned.
 
-2. Use cloud-init to do it automatically at VPS build time: https://github.com/piku/cloud-init
+2. Use cloud-init to do it automatically at VPS build time (see the [cloud-init](https://github.com/piku/cloud-init) repository)
 
-3. Use piku-bootstrap to do it once your box is already provisioned: https://github.com/piku/piku-bootstrap
+3. Manually: Follow the guide below or one of the platform-specfic guides. If you are running `piku` on specific Linux versions, feel free to contribute your own instructions.
 
-# Generic steps (referenced from INSTALL-x)
+## Generic Installation Steps
 
-## Set up the `piku` user
+### Set up the `piku` user
 
 `piku` requires a separate user account to run. To create a new user with the right group membership (we're using the built-in `www-data` group because it's generally thought of as a less-privileged group), enter the following command:
 
@@ -48,8 +40,7 @@ Creating '/home/piku/.piku/logs'.
 Setting '/home/piku/piku.py' as executable.
 ```
 
-
-## Set up SSH access
+### Set up SSH access
 
 If you don't have an SSH public key (or never used one before), you need to create one. The following instructions assume you're running some form of UNIX on your own machine (Windows users should check the documentation for their SSH client, unless you have [Cygwin][cygwin] installed).
 
@@ -93,7 +84,7 @@ command="FINGERPRINT=85:29:07:cb:de:ad:be:ef:42:65:00:c8:d2:6b:9e:ff NAME=defaul
 
 This line is what enables you to SSH (and perform `git` over SSH operations) to the `piku` user without a password, verifying your identity via your public key, restricting what can be done remotely and passing on to `piku` itself the commands you'll be issuing.
 
-## Test
+### Test
 
 From your machine, do:
 
@@ -126,7 +117,5 @@ Commands:
 Connection to pi.lan closed.
 ```
 
-
 [uwsgi]: https://github.com/unbit/uwsgi
 [cygwin]: http://www.cygwin.com
-
