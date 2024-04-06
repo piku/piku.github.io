@@ -1,7 +1,5 @@
 # Features
 
-## Heroku-like Workflow
-
 ## Workflow
 
 `piku` supports a Heroku-like workflow:
@@ -16,7 +14,7 @@
    * For Java, it builds your app depending on either `pom.xml` or `build.gradle` file.
    * For Clojure, it can use either `leiningen` or the Clojure CLI and a `deps.edn` file.
    * For Ruby, it does `bundle install` of your gems in an isolated folder.
-* It then looks at a [`Procfile`](configuration/procfile.md) and starts the relevant workers using [uWSGI][uwsgi] as a generic process manager.
+* It then looks at a [`Procfile`](configuration/procfile.md) and starts the relevant workers using `uwsgi` as a generic process manager.
 * You can optionally also specify a `release` worker which is run once when the app is deployed.
 * You can then remotely change application settings (`config:set`) or scale up/down worker processes (`ps:scale`).
 * You can also bake application and `nginx` settings into an [`ENV` configuration file](configuration/index.md#configuring-piku-via-env).
@@ -40,11 +38,11 @@ These features are configured by setting appropriate values in the [`ENV`](confi
 
 ## Supported Platforms
 
-`piku` is intended to work in any POSIX-like environment where you have Python, `nginx`, [`uWSGI`][uwsgi] and SSH: it has been deployed on Linux, FreeBSD, [Cygwin][cygwin] and the [Windows Subsystem for Linux][wsl].
+`piku` is intended to work in any POSIX-like environment where you have Python, `nginx`, `uwsgi` and `ssh`: it has been deployed on Linux, FreeBSD, [Cygwin][cygwin] and the [Windows Subsystem for Linux][wsl].
 
 As a baseline, it began its development on an original 256MB Rasbperry Pi Model B, and still runs reliably on it.
 
-But its main use is as a micro-PaaS to run applications on cloud servers with both Intel and ARM CPUs, with Debian and Ubuntu Linux as target platforms.
+But its main use is as a micro-PaaS to run applications on cloud servers with both Intel and ARM CPUs, with either Debian or Ubuntu Linux as target platforms.
 
 ## Supported Runtimes
 

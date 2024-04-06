@@ -1,4 +1,4 @@
-# Welcome
+# ![](img/logo.svg)
 
 `piku`, inspired by [dokku][dokku], allows you do `git push` deployments to your own servers, no matter how small they are.
 
@@ -41,7 +41,7 @@ There are two main ways of deploying `piku` onto a new server:
 
 ## Manage - via the `piku` helper
 
-To make life easier you can also install the [piku](./piku) helper into your path (e.g. `~/bin`).
+To make life easier you can also install the `piku` helper into your path (e.g. `~/bin`).
 
 ```shell
 curl https://raw.githubusercontent.com/piku/piku/master/piku > ~/bin/piku && chmod 755 ~/bin/piku

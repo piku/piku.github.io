@@ -55,7 +55,6 @@ Environment variables can be changed after deployment using `config:set`.
 4. _TODO: Java_
 2. For all the rest, a `Procfile` is required to determine application entry points. 
 
-
 ## Application isolation
 
 Application isolation can be tackled at several levels, the most relevant of which being:
