@@ -2,6 +2,21 @@
 
 The idea behind `piku` is that it provides the simplest possible way to deploy web apps or services. Simplicity comes at the expense of features, of course, and this document tries to capture the trade-offs.
 
+## Core values
+
+* Must run on low end devices.
+* Accessible to hobbyists and K-12 schools.
+* ~1500 lines readable code.
+* Functional code style.
+* Few (single?) dependencies
+* [12 factor app](https://12factor.net).
+* Simplify user experience.
+* Cover 80% of common use cases.
+* Sensible defaults for all features.
+* Leverage distro packages in Raspbian/Debian/Ubuntu (Alpine and RHEL support is WIP)
+* Leverage standard tooling (`git`, `ssh`, `uwsgi`, `nginx`).
+* Preserve backwards compatibility where possible
+
 ## Why uWSGI
 
 Using [uWSGI][uwsgi] in [emperor mode][emperor] gives us the following features for free:
