@@ -1,16 +1,27 @@
 # Installation
 
+## TL;DR:
+
+To install it on your server, SSH in as root and run this:
+
+```bash
+curl https://piku.github.io/get | sh
+```
+
 ## Installation Methods
 
-`piku` requires `Python 3`, [uWSGI][uwsgi], SSH, and a Linux distribution that runs `systemd`, such as Raspbian Jessie/Debian 8+/Ubuntu/Fedora/CentOS.
+`piku` requires `Python 3`, [uWSGI][uwsgi], `ssh`, and a Linux distribution that runs `systemd`, such as Raspbian Jessie/Debian 8+/Ubuntu/Fedora/CentOS.
 
 There are 3 ways to install `piku` on a server:
 
-1. Use [piku-bootstrap](https://github.com/piku/piku-bootstrap) to do it if your server is already provisioned.
+1. Use [piku-bootstrap](https://github.com/piku/piku-bootstrap) to do it if your server is already provisioned (that is what the TL;DR command does)
 
-2. Use cloud-init to do it automatically at VPS build time (see the [cloud-init](https://github.com/piku/cloud-init) repository)
+2. Use `cloud-init` to do it automatically at VPS build time (see the [`cloud-init`](https://github.com/piku/cloud-init) repository, which has examples for most common cloud providers)
 
-3. Manually: Follow the guide below or one of the platform-specfic guides. If you are running `piku` on specific Linux versions, feel free to contribute your own instructions.
+3. Manually: Follow the guide below or one of the platform-specfic guides. 
+
+!!! Contributing
+    If you are running `piku` on specific Linux versions, feel free to contribute your own instructions.
 
 ## Generic Installation Steps
 
@@ -40,9 +51,9 @@ Creating '/home/piku/.piku/logs'.
 Setting '/home/piku/piku.py' as executable.
 ```
 
-### Set up SSH access
+### Set up `ssh` access
 
-If you don't have an SSH public key (or never used one before), you need to create one. The following instructions assume you're running some form of UNIX on your own machine (Windows users should check the documentation for their SSH client, unless you have [Cygwin][cygwin] installed).
+If you don't have an `ssh` public key (or never used one before), you need to create one. The following instructions assume you're running some form of UNIX on your own machine (Windows users should check the documentation for their `ssh` client, unless you have [Cygwin][cygwin] installed).
 
 **On your own machine**, issue the `ssh-keygen` command and follow the prompts:
 
@@ -82,7 +93,7 @@ cat .ssh/authorized_keys
 command="FINGERPRINT=85:29:07:cb:de:ad:be:ef:42:65:00:c8:d2:6b:9e:ff NAME=default /home/piku/piku.py $SSH_ORIGINAL_COMMAND",no-agent-forwarding,no-user-rc,no-X11-forwarding,no-port-forwarding ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhTYZi/qeJBKgU3naI8FNjQgeMYnMsEtqrOmUc4lJoPNH2qBUTNkzwThGqsBm2HNLPURWMiEifBqF+kRixMud67Co7Zs9ys7pwFXkJB9bbZasd2JCGfVZ4UYXHnvgejSWkLAV/4bObhsbP2vWOmbbm91Cwn+PGJgoiW08yrd45lsDmgv9cUAJS3e8LkgVELvIDg49yM5ArB88oxwMEoUgWU2OniHmH0o1zw5I8WXHRhHOjb8cGsdTYfXEizRKKRTM2Mu6dKRt1GNL0UbWi8iS3uJHGD3AcQ4ApdMl5X0gTixKHponStOrSMy19/ltuIy8Sjr7KKPxz07ikMYr7Vpcp youruser@yourlaptop.lan
 ```
 
-This line is what enables you to SSH (and perform `git` over SSH operations) to the `piku` user without a password, verifying your identity via your public key, restricting what can be done remotely and passing on to `piku` itself the commands you'll be issuing.
+This line is what enables you to `ssh` (and perform `git` over `ssh` operations) to the `piku` user without a password, verifying your identity via your public key, restricting what can be done remotely and passing on to `piku` itself the commands you'll be issuing.
 
 ### Test
 
