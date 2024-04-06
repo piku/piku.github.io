@@ -1,8 +1,17 @@
 site_name: Piku
+repo_url: https://github.com/piku/piku
 theme:
   name: material
   palette:
-    primary: red
+    - primary: red
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon:  material/weather-sunny
+        name: Switch to light mode
   logo: img/piku.svg
   favicon: img/icon.png
   features:
