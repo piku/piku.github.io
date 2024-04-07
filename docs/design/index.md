@@ -4,7 +4,7 @@ The idea behind `piku` is that it provides the simplest possible way to deploy w
 
 ## Core values
 
-* Must run on low end devices.
+* Run on low end devices.
 * Accessible to hobbyists and K-12 schools.
 * ~1500 lines readable code.
 * Functional code style.
