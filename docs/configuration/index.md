@@ -10,7 +10,6 @@ worker.py
 requirements.txt
 ```
 
-
 <p class="grid cards" markdown>
     <a href="env.md" class="card">
     :material-file-key: ENV
