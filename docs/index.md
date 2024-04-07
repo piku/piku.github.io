@@ -12,7 +12,7 @@
     :material-gesture-tap-hold: Using/Features
     </a>
     <a href="manage.md" class="card">
-    :octicons-tools-16: Managing
+    :octicons-tools-16: Managing and Monitoring
     </a>
     <a href="community/examples.md" class="card">
     :material-application-outline: Examples
