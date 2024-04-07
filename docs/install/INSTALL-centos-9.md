@@ -1,6 +1,7 @@
 # Installation on CentOS 9
 
-> This is a standalone, distribution-specific version of `INSTALL.md`. You do not need to read or follow the original file, but can refer to it for generic steps like setting up SSH keys (which are assumed to be common knowledge here)
+!!! note
+    This is a standalone, distribution-specific version of `INSTALL.md`. You do not need to read or follow the original file, but can refer to it for generic steps like setting up SSH keys (which are assumed to be common knowledge here)
 
 All steps done as root (or add sudo if you prefer).
 

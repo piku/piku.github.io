@@ -1,6 +1,7 @@
 # Installation on Raspbian Stretch or Buster
 
-> This is a standalone, distribution-specific version of `INSTALL.md`. You do not need to read or follow the original file, but can refer to it for generic steps like setting up SSH keys (which are assumed to be common knowledge here)
+!!! note
+    This is a standalone, distribution-specific version of `INSTALL.md`. You do not need to read or follow the original file, but can refer to it for generic steps like setting up SSH keys (which are assumed to be common knowledge here)
 
 `piku` setup is simplified in modern Debian versions, since it can take advantage of some packaging improvements in [uWSGI][uwsgi] and does not require a custom `systemd` service. However, Stretch still ships with Python 3.5, which means it's not an ideal environment for new deployments on both Intel and ARM devices (Buster, in turn, ships with Python 3.7).
 

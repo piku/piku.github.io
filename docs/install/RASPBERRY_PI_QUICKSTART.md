@@ -1,8 +1,7 @@
 # Setting up a Raspberry Pi Piku Server from Scratch
 
-## DISCLAIMER!
-
-### These instructions are correct as of April 1st 2016
+!!! Warning
+    These instructions are correct as of April 1st 2016. Quite a bit has changed since then in Raspberry Pi land, so you may need to adjust them accordingly.
 
 Start by flashing a SD card with [the latest Raspbian Jessie Lite image](https://www.raspberrypi.org/downloads/raspbian/).
 
@@ -52,8 +51,7 @@ sudo apt install -y python-virtualenv python-pip git uwsgi uwsgi-plugin-python n
 sudo pip install -U click
 sudo reboot
 ```
-
-# Meanwhile, go get the goodies while Raspberry Pi is rebooting
+ Meanwhile, go get the goodies while Raspberry Pi is rebooting
 
 (We assume you know about ssh keys and have one "at hand", you'll need to copy it)
 
@@ -116,9 +114,9 @@ Prepare uWSGI (part two):
 sudo systemctl start uwsgi-piku
 sudo systemctl status uwsgi-piku.service
 ```
+If you're still here, odds are your Pi is ready for work
 
-
-# If you're still here, odds are your Pi is ready for work
+### Testing
 
 Go back to your machine and try these commands:
 
