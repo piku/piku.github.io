@@ -1,7 +1,10 @@
 
 # Manage
 
-To make life easier you can also install the `piku` helper into your path (e.g. `~/bin`).
+
+## Managing your Piku apps
+
+To make life easier you can also install the `piku` helper into your path (e.g. `~/bin`):
 
 ```shell
 curl https://raw.githubusercontent.com/piku/piku/master/piku > ~/bin/piku && chmod 755 ~/bin/piku
@@ -41,3 +44,7 @@ App: dashboard
 piku@piku:~/.piku/apps/dashboard$ ls
 data  ENV  index.html  package.json  package-lock.json  Procfile  server.wisp
 ```
+
+## Monitoring
+
+Besides using the `logs` command, there is a [sample monitoring application](https://github.com/piku/piku-monitoring) to keep tabs on resource usage.
