@@ -1,6 +1,9 @@
 # Example Applications
 
-The following is a list of sample applications that can be deployed using `piku`. They are meant to be illustrative of the kinds of applications that can be deployed using `piku`, and are not meant to be exhaustive.
+
+Besides the [bundled examples](https://github.com/piku/piku/tree/master/examples), there are a number of community-contributed examples that can be deployed using `piku`.
+
+They are meant to be illustrative of the kinds of applications that can be deployed using `piku`, and are not meant to be exhaustive.
 
 ## Pre-built Apps and Tools
 
