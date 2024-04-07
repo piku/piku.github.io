@@ -41,19 +41,13 @@ SETTING2=${SETTING1}/bar
 PORT=9080
 ```
 
-See [configuration](../configuration/index.md) for a full list of environment variables which can also be set.
+See [configuration](../configuration/index.md) for a full list of environment variables that can also be set.
 
-Environment variables can be changed after deployment using `config:set`.
+Environment variables can be changed after deployment using the `config:set` command.
 
 ## Runtime detection
 
-`piku` follows a very simple set of rules to determine what kind of runtime is required:
-
-1. If there's a `requirements.txt` file at the top level, then the app is assumed to require Python.
-2. _TODO: Go_
-3. _TODO: Node_
-4. _TODO: Java_
-2. For all the rest, a `Procfile` is required to determine application entry points. 
+`piku` follows a very simple set of rules to determine what kind of runtime is required, outlined in [the configuration section](../configuration/index.md#runtime-detection)
 
 ## Application isolation
 
