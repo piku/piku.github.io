@@ -76,10 +76,30 @@ This separation makes it easier to cope with long/large deployments and restore 
 
 ## Components
 
-This diagram (available as a `dot` file in the `img` folder) outlines how its components interact:
+This diagram outlines how its components interact:
 
 ```mermaid
-
+graph TD
+    subgraph "systemd"
+        nginx([nginx])
+        sshd([sshd])
+        uwsgi([uwsgi])
+    end
+    uwsgi-->vassal([vassal])
+    vassal-.->uwsgi.ini
+    sshd-->piku([piku.py])-->repo[git repo]
+    Procfile-->uwsgi.ini
+    an-->app
+    repo---app
+    repo---ENV
+    repo---requirements.txt
+    repo---Procfile
+    requirements.txt-->virtualenv
+    uwsgi.ini-->virtualenv
+    ENV-->an
+    ENV-->uwsgi.ini
+    nginx-.-mn[master<br>nginx.conf]
+    mn-.-an[app<br>nginx.conf]
 ```
 
 
