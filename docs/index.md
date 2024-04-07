@@ -1,8 +1,23 @@
 # ![](img/logo.svg)
 
-`piku`, inspired by [dokku][dokku], allows you do `git push` deployments to your own servers, no matter how small they are.
+`piku`, inspired by `dokku`, allows you do `git push` deployments to your own servers, no matter how small they are.
 
 ![asciicast](img/demo.svg)
+
+<p class="grid cards" markdown>
+    <a href="install/index.md" class="card">
+    :fontawesome-solid-download: Installing
+    </a>
+    <a href="install/index.md" class="card">
+    :material-gesture-tap-hold: Using
+    </a>
+    <a href="manage.md" class="card">
+    :octicons-tools-16: Managing
+    </a>
+    <a href="community/examples.md" class="card">
+    :material-application-outline: Examples
+    </a>
+</p>
 
 ## Workflow
 
@@ -28,63 +43,3 @@ It is currently being refactored to require Python 3.7 or above, since even thou
 ## Deprecation Notices
 
 Since most of its users run it on LTS distributions, there is no rush to introduce disruption. The current plan is to throw up a warning for older runtimes and do regression testing for 3.7, 3.8, 3.9 and 3.10 (replacing the current bracket of tests from 3.5 to 3.8), and make sure we also cover Ubuntu 22.04, Debian 11 and Fedora 37+.
-
-
-## Install
-
-`piku` can manage multiple apps on a single machine, and all you need is a VPS, Raspberry Pi, or other server.
-
-There are two main ways of deploying `piku` onto a new server:
-
-* Use [`piku-bootstrap`](https://github.com/piku/piku-bootstrap) to reconfigure a new or existing Ubuntu virtual machine.
-* Use `cloud-init` when creating a new virtual machine or barebones automated deployment (check [this repository](https://github.com/piku/cloud-init) for examples).
-
-## Manage - via the `piku` helper
-
-To make life easier you can also install the `piku` helper into your path (e.g. `~/bin`).
-
-```shell
-curl https://raw.githubusercontent.com/piku/piku/master/piku > ~/bin/piku && chmod 755 ~/bin/piku
-```
-
-This shell script simplifies working with multiple `piku` remotes and applications:
-
-* If you `cd` into a project folder that has a `git` remote called `piku` the helper will infer the remote server and app name and use them automatically:
-
-```shell
-$ piku logs
-$ piku config:set MYVAR=12
-$ piku stop
-$ piku deploy
-$ piku destroy
-$ piku # <- show available remote and local commands
-```
-
-* If you are starting a new project, `piku init` will download example `Procfile` and `ENV` files into the current folder:
-
-```shell
-$ piku init
-Wrote ./ENV file.
-Wrote ./Procfile.
-```
-
-* The `piku` helper also lets you pass settings to the underlying SSH command: `-t` to run interactive commands remotely, and `-A` to proxy authentication credentials in order to do remote `git` pulls.
-
-For instance, here's how to use the `-t` flag to obtain a `bash` shell in the app directory of one of your `piku` apps:
-
-```shell
-$ piku -t run bash
-Piku remote operator.
-Server: piku@cloud.mccormickit.com
-App: dashboard
-
-piku@piku:~/.piku/apps/dashboard$ ls
-data  ENV  index.html  package.json  package-lock.json  Procfile  server.wisp
-```
-
-[dokku]: https://github.com/dokku/dokku
-[raspi-cluster]: https://github.com/rcarmo/raspi-cluster
-[cygwin]: http://www.cygwin.com
-[uwsgi]: https://github.com/unbit/uwsgi
-[wsl]: https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux
-

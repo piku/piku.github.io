@@ -31,4 +31,4 @@ Besides [`ENV`](env.md) and [`Procfile`](procfile.md), `piku` also looks for run
 !!! info
     `go.mod` support is currently in development.
 
-These are not exclusive, however. There is also [a sample Phoenix app](../community/samples.md#phoenix) that demonstrates how to add support for additional runtimes.
+These are not exclusive, however. There is also [a sample Phoenix app](../community/examples.md#phoenix) that demonstrates how to add support for additional runtimes.

@@ -14,7 +14,7 @@ There is an active [discussion forum](https://github.com/piku/piku/discussions) 
     <a href="contributing.md" class="card">
     :fontawesome-solid-code-branch: Contributing
     </a>
-    <a href="samples.md" class="card">
+    <a href="examples.md" class="card">
     :material-application-outline: Examples
     </a>
 </p>
