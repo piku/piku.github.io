@@ -10,8 +10,11 @@ There is an active [discussion forum](https://github.com/piku/piku/discussions) 
 
 * [Fast Web App Tutorial](https://github.com/piku/webapp-tutorial)
 
-## Contribution Guidelines
-
-- Small and focused PRs. Please don't include changes that don't address the subject of your PR.
-- Follow the style of importing functions directly e.g. `from os.path import abspath`
-- Follow `PEP8`.
+<p class="grid cards" markdown>
+    <a href="contributing.md" class="card">
+    :fontawesome-solid-code-branch: Contributing
+    </a>
+    <a href="samples.md" class="card">
+    :material-application-outline: Examples
+    </a>
+</p>

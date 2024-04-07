@@ -1,4 +1,4 @@
-# Sample Applications
+# Example Applications
 
 The following is a list of sample applications that can be deployed using `piku`. They are meant to be illustrative of the kinds of applications that can be deployed using `piku`, and are not meant to be exhaustive.
 
