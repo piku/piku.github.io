@@ -10,14 +10,24 @@ worker.py
 requirements.txt
 ```
 
-### Configuration Files
 
-`piku` relies on two configuration files shipped with your app to determine how to run it: [`Procfile`](procfile.md) and [`ENV`](env.md).
+<p class="grid cards" markdown>
+    <a href="env.md" class="card">
+    :material-file-key: ENV
+    </a>
+    <a href="procfile.md" class="card">
+    :material-file-cog: Procfile
+    </a>
+</p>
 
-* The [`Procfile`](procfile.md) tells `piku` what kind of workers to run
+## Configuration Files
+
+`piku` relies on two configuration files shipped with your app to determine how to run it: [`ENV`](env.md) and [`Procfile`](procfile.md).
+
 * The [`ENV`](env.md) file contains environment variables that allow you to configure both `piku` and your app, following the [12-factor app](https://12factor.net) approach.
+* The [`Procfile`](procfile.md) tells `piku` what kind of workers to run
 
-### Runtime Detection
+## Runtime Detection
 
 Besides [`ENV`](env.md) and [`Procfile`](procfile.md), `piku` also looks for runtime-specific files in the root of your app's directory:
 

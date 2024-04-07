@@ -8,8 +8,8 @@
     <a href="install/index.md" class="card">
     :fontawesome-solid-download: Installing
     </a>
-    <a href="install/index.md" class="card">
-    :material-gesture-tap-hold: Using
+    <a href="features.md" class="card">
+    :material-gesture-tap-hold: Using/Features
     </a>
     <a href="manage.md" class="card">
     :octicons-tools-16: Managing
