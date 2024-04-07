@@ -2,6 +2,8 @@
 
 `piku`, inspired by `dokku`, allows you do `git push` deployments to your own servers, no matter how small they are.
 
+## Demo
+
 ![asciicast](img/demo.svg)
 
 <p class="grid cards" markdown>
