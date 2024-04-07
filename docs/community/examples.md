@@ -29,6 +29,7 @@ They are meant to be illustrative of the kinds of applications that can be deplo
 ## NodeJS
 
 * [Sample NodeJS App](https://github.com/piku/sample-nodejs-app)
+* [Piku Monitor](https://github.com/piku/piku-monitoring) - a simple monitoring tool for `piku` apps, written in ClojureScript
 
 ## Java
 
