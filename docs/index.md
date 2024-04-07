@@ -3,16 +3,16 @@
 `piku`, inspired by `dokku`, allows you do `git push` deployments to your own servers, no matter how small they are.
 
 <p class="grid cards" markdown>
-    <a href="install/index.md" class="card">
+    <a href="install/index.html" class="card">
     :fontawesome-solid-download: Installing
     </a>
-    <a href="features.md" class="card">
+    <a href="features.html" class="card">
     :material-gesture-tap-hold: Using/Features
     </a>
-    <a href="manage.md" class="card">
+    <a href="manage.html" class="card">
     :octicons-tools-16: Managing and Monitoring
     </a>
-    <a href="community/examples.md" class="card">
+    <a href="community/examples.html" class="card">
     :material-application-outline: Examples
     </a>
 </p>

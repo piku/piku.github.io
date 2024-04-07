@@ -11,10 +11,10 @@ There is an active [discussion forum](https://github.com/piku/piku/discussions) 
 * [Fast Web App Tutorial](https://github.com/piku/webapp-tutorial)
 
 <p class="grid cards" markdown>
-    <a href="contributing.md" class="card">
+    <a href="contributing.html" class="card">
     :fontawesome-solid-code-branch: Contributing
     </a>
-    <a href="examples.md" class="card">
+    <a href="examples.html" class="card">
     :material-application-outline: Examples
     </a>
 </p>
