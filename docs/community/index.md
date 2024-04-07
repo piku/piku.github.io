@@ -1,6 +1,6 @@
 # Community
 
-There is an active [discussion forum](https://github.com/piku/piku/discussions) for `piku` where you can ask questions, share your deployments, and discuss new features, and we have a pblished [roadmap](https://github.com/piku/piku/projects/2).
+There is an active [discussion forum](https://github.com/piku/piku/discussions) for `piku` where you can ask questions, share your deployments, and discuss new features, and we have a published [roadmap](https://github.com/orgs/piku/projects/2).
 
 ## [LinuxConf Talk](https://www.youtube.com/watch?v=ec-GoDukHWk)
 
