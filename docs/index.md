@@ -15,6 +15,9 @@
     <a href="community/examples.html" class="card">
     :material-application-outline: Examples
     </a>
+    <a href="https://github.com/piku/webapp-tutorial" class="card">
+    :fontawesome-solid-graduation-cap: Web App Tutorial
+    </a>
 </p>
 
 ## Demo
