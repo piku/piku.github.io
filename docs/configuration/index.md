@@ -11,10 +11,10 @@ requirements.txt
 ```
 
 <p class="grid cards" markdown>
-    <a href="./env.md" class="card">
+    <a href="./env.html" class="card">
     :material-file-key: ENV
     </a>
-    <a href="./procfile.md" class="card">
+    <a href="./procfile.html" class="card">
     :material-file-cog: Procfile
     </a>
 </p>
