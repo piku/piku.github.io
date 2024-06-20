@@ -64,6 +64,11 @@ cron2: 0 * * * * python batch.py
 !!! warning
     `crontab` expressions are simplified and do not support ranges or lists, only single values, splits and `*` (wildcard).
 
+#### alternatives
+```Python```
+[apscheduler](https://github.com/agronholm/apscheduler) - Provides it's own library for scheduling jobs, and honors the full regex of crontab.
+
+
 ### `preflight`
 
 `preflight`  is a special "worker" that is run once _before_ the app is deployed _and_ dependencies are installed (can be useful for cleanups, like resetting caches, removing older versions of files, etc).
