@@ -52,6 +52,15 @@ Also, in this mode `uwsgi` will talk to `nginx` via a Unix socket, so you don't 
 
 A `cron` worker is a process that runs at a specific time (or intervals), using a simplified `crontab` expression preceding the command to be run (e.g. `cron: */5 * * * * python batch.py` to run a batch every 5 minutes)
 
+Multiple crons can be scheduled by simply adding multiple entries with `cron` prefix.
+
+```
+...
+cron1: */5 * * * * python batch.py
+cron2: 0 * * * * python batch.py
+...
+```
+
 !!! warning
     `crontab` expressions are simplified and do not support ranges or lists, only single values, splits and `*` (wildcard).
 
