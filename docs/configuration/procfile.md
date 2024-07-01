@@ -10,7 +10,7 @@ worker: background_worker
 
 ## Worker Types
 
-`piku` supports six different kinds of worker processes:
+`piku` supports seven different kinds of worker processes:
 
 ```bash
 # A module to be loaded by uwsgi to serve HTTP requests
@@ -32,6 +32,15 @@ Each of these has slightly different features:
 `uwsgi` will automatically spawn multiple workers for you, and you can control the number of workers via the `UWSGI_PROCESSES` environment variable.
 
 Also, in this mode `uwsgi` will talk to `nginx` via a Unix socket, so you don't need to worry about the HTTP server at all.
+
+### `php`
+
+`php` workers will execute PHP code in files with the `.php` extension and serve other files. For security reasons, files with the '.inc' extension are not executed.
+
+You will need to install the [uwsgi-plugin-php](https://packages.debian.org/stable/web/uwsgi-plugin-php) package for Debian-based systems, such as Ubuntu, or the equivalent for your distro.
+
+!!! note
+If you place a `php.ini` file in the root of your app, the PHP interpreter for this app will ignore the default system `php.ini`. If your distro is configured to include additional files from an auxiliary directory, those files will continue to be processed.
 
 ### `web`
 
