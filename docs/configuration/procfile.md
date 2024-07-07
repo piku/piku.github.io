@@ -37,8 +37,8 @@ Also, in this mode `uwsgi` will talk to `nginx` via a Unix socket, so you don't 
 
 `php` workers will execute PHP code in files with the `.php` extension and serve other files. For security reasons, files with the '.inc' extension are not executed.
 
-You will need to install the [uwsgi-plugin-php](https://packages.debian.org/stable/web/uwsgi-plugin-php) package for Debian-based systems, such as Ubuntu, or the equivalent for your distro.
-
+!!! note
+You will need to install the [uwsgi-plugin-php](https://packages.debian.org/stable/web/uwsgi-plugin-php) package for Debian-based systems, such as Ubuntu, or the equivalent for your distro. This package is available for Ubuntu [20.04](https://packages.ubuntu.com/focal/uwsgi-plugin-php) and [24.04](https://packages.ubuntu.com/noble/uwsgi-plugin-php), but seems to have been withdrawn from 22.04.
 !!! note
 If you place a `php.ini` file in the root of your app, the PHP interpreter for this app will ignore the default system `php.ini`. If your distro is configured to include additional files from an auxiliary directory, those files will continue to be processed.
 
