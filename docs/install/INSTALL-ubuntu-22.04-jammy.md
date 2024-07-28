@@ -54,6 +54,9 @@ include /home/PAAS_USERNAME/.piku/nginx/*.conf;
 ## Set up systemd.path to reload nginx upon config changes
 
 ```bash
+# Grab the configuration files
+wget https://raw.githubusercontent.com/piku/piku/master/piku-nginx.path
+wget https://raw.githubusercontent.com/piku/piku/master/piku-nginx.service
 # Set up systemd.path to reload nginx upon config changes
 sudo cp ./piku-nginx.{path, service} /etc/systemd/system/
 sudo systemctl enable piku-nginx.{path,service}
