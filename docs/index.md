@@ -43,8 +43,8 @@ You can also deploy a `gh-pages` style static site using a `static` worker type,
 
 **`piku` is considered STABLE**. It is actively maintained, but "actively" here means the feature set is pretty much done, so it is only updated when new language runtimes are added or reproducible bugs crop up.
 
-It currently requires Python 3.7 or above, since even though 3.8+ is now the baseline Python 3 version in Ubuntu LTS 20.04 and Debian 11 has already moved on to 3.9, there are no substantial differences between those versions.
+It currently requires Python 3.8 or above, which is the baseline in Ubuntu LTS 20.04 while Debian 11 has already moved on to 3.9. Sometime in 2025 this will be changed according to the next section.
 
 ## Deprecation Notices
 
-Since most of its users run it on LTS distributions, there is no rush to introduce disruption. The current plan is to throw up a warning for older runtimes and do regression testing for 3.7-3.12 (replacing the current bracket of tests from 3.5 to 3.8), and make sure we also cover Ubuntu 22.04, Debian 11 and Fedora 37+.
+Since most of its users run it on LTS distributions, there is no rush to introduce disruption. The current plan is to throw up a warning for older runtimes and do regression testing for 3.10-3.12 (replacing the current bracket of tests from 3.8 to 3.12), and make sure we also cover Ubuntu 22.04, Debian 11 and Fedora 39+.
