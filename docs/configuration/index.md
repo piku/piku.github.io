@@ -30,7 +30,7 @@ requirements.txt
 
 Besides [`ENV`](env.md) and [`Procfile`](procfile.md), `piku` also looks for runtime-specific files in the root of your app's directory:
 
-* If there's a `requirements.txt` file at the top level, then the app is assumed to require Python.
+* If there's a `requirements.txt` or `pyproject.toml` file at the top level, then the app is assumed to require Python. Installing an app with a `pyproject.toml` will require [poetry](https://python-poetry.org/) or [uv](https://docs.astral.sh/uv/).
 * If there's a `Gemfile` at the top level, then the app is assumed to require Ruby.
 * If there's a `package.json` file at the top level, then the app is assumed to require Node.js.
 * If there's a `pom.xml` or a `build.gradle` file at the top level, then the app is assumed to require Java.
