@@ -10,7 +10,7 @@ worker: background_worker
 
 ## Worker Types
 
-`piku` supports seven different kinds of worker processes:
+`piku` supports different kinds of worker processes:
 
 ```bash
 # A module to be loaded by uwsgi to serve HTTP requests
