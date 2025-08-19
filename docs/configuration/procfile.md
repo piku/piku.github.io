@@ -15,10 +15,10 @@ worker: background_worker
 ```bash
 # A module to be loaded by uwsgi to serve HTTP requests
 wsgi: module.submodule:app
-# A background worker, using the default name
+# Background workers - you can define multiple workers with different names
 worker: python long_running_script.py
-# Another worker with a different name
 fetcher: python fetcher.py
+worker-email: python email_processor.py
 # Simple cron expression: minute [0-59], hour [0-23], day [0-31], month [1-12], weekday [1-7] (starting Monday, no ranges allowed on any field)
 cron: 0 0 * * * python midnight_cleanup.py
 release: python initial_cleanup.py
@@ -48,7 +48,20 @@ If you place a `php.ini` file in the root of your app, the PHP interpreter for t
 
 ### `worker`
 
-`worker` processes are just standard processes that run in the background. They can actually have arbitrary names, and the idea is that they would perform any tasks your app requires that isn't directly related to serving web pages.
+`worker` processes are just standard processes that run in the background. They can perform any tasks your app requires that isn't directly related to serving web pages.
+
+You can have multiple `worker` processes by giving them unique names. Each worker process can have an arbitrary name as long as it doesn't conflict with the reserved worker types (`wsgi`, `web`, `php`, `static`, `cron`, `preflight`, `release`).
+
+For example, this Procfile defines multiple worker processes:
+
+```bash
+worker: python default_worker.py
+worker-host: python host_worker.py  
+worker-proxy: node proxy.js
+data-processor: python process_data.py
+```
+
+This allows you to run different background tasks and filter logs for specific workers using `piku logs worker-host` or `piku logs data-processor`.
 
 ### `static`
 
