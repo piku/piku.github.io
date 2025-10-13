@@ -100,6 +100,10 @@ command="FINGERPRINT=85:29:07:cb:de:ad:be:ef:42:65:00:c8:d2:6b:9e:ff NAME=defaul
 
 This line is what enables you to `ssh` (and perform `git` over `ssh` operations) to the `piku` user without a password, verifying your identity via your public key, restricting what can be done remotely and passing on to `piku` itself the commands you'll be issuing.
 
+### Install acme.sh
+
+To get SSL certificates, piku uses [acme.sh](https://github.com/acmesh-official/acme.sh). To install it, become the piku user (`sudo su - $PAAS_USERNAME`) and then follow the [installation instructions](https://github.com/acmesh-official/acme.sh?tab=readme-ov-file#1-how-to-install).
+
 ### Test
 
 From your machine, do:
